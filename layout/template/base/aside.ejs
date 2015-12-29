@@ -1,0 +1,50 @@
+<aside id="side-nav">
+  <!-- 关闭按钮 -->
+  <div class="close"></div>
+  <ul>
+    <!-- home -->
+    <li><a href="<%- config.root %>">Home</a></li>
+    <!-- archives -->
+    <li><a href="<%- config.root %><%- config.archive_dir %>">archives</a></li>
+    <!-- categories -->
+    <% if (site.categories.length){ %>
+    <li class="toggle-menu">
+      <input type="checkbox">
+      <a href="javascript:;">Categories</a>
+      <ul>
+        <% site.categories.sort('name').each(function(item){ %>
+        <li>
+          <a href="<%- config.root %><%- item.path %>"><%= item.name %>(<%= item.posts.length %>)</a>
+        </li>
+        <% }); %>
+      </ul>
+    </li>
+    <% } %>
+    <!-- tags -->
+    <% if (site.tags.length){ %>
+    <li class="toggle-menu">
+      <input type="checkbox">
+      <a href="javascript:;">Tags</a>
+      <ul>
+        <% site.tags.sort('name').each(function(item){ %>
+        <li>
+          <a href="<%- config.root %><%- item.path %>"><%= item.name %>(<%= item.posts.length %>)</a>
+        </li>
+        <% }); %>
+      </ul>
+    </li>
+    <% } %>
+    <!-- links -->
+    <% if (theme.links && theme.links.length){ %>
+    <li class="toggle-menu">
+      <input type="checkbox">
+      <a href="javascript:;">Links</a>
+        <ul class="sb-submenu">
+            <% theme.links.forEach(function(item){ %>
+            <li><a href="<%- item.link %>" target="_blank"><%= item.name %></a></li>
+            <% }); %>
+        </ul>
+    </li>
+    <% } %>
+  </ul>
+</aside>

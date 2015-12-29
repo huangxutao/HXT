@@ -1,0 +1,27 @@
+<section class="content">
+  <% page.posts.each(function(post) { %>
+  <div class="row">
+    <span class="date"><%= date(post.date, null) %></span>
+    <h1 class="title"><a href="<%- config.root %><%- post.path %>"><%- post.title %></a></h1>
+    <h2 class="tags">
+    <% if (post.tags && post.tags.length){ %>
+    <% count = post.tags.length %>
+      <% post.tags.forEach(function(tag, index) { %>
+      <a href='<%= config.root + tag.path %>'><%= tag.name %></a>
+      <% if (count !== index+1) { %><% } %>
+    <% }); %>
+    <% } %>
+    </h2>
+    <p>
+      <% if (post.excerpt){ %>
+        <%- post.excerpt %>
+      <% } else { %>
+        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220) %>
+      <% } %>
+    </p>
+    <% if (theme.excerpt_link) { %>
+      <a href="<%- config.root %><%- post.path %>" class="more"><%= theme.excerpt_link %>&raquo;</a>
+    <% } %>
+  </div>
+  <% }); %>
+</section>

@@ -1,0 +1,36 @@
+<section class="content">
+  <article class="article">
+    <div class="box">
+      <span class="date"><%= date(post.date, null) %>|</span>
+      <span class="tags">
+      <% if (post.tags && post.tags.length){ %>
+      <% count = post.tags.length %>
+        <% post.tags.forEach(function(tag, index) { %>
+        <a href='<%= config.root + tag.path %>'><%= tag.name %></a>
+        <% if (count !== index+1) { %><% } %>
+      <% }); %>
+      <% } %>
+      </span>
+      <h1 class="title"><%- post.title %></h1>
+    </div>
+    <div class="article-nav"><%- partial('template/post/article-nav', {item: page, index: false}) %></div>
+    <%- post.content %>
+  </article>
+  <div class="post-nav">
+    <div class="pre-post">
+      <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>">
+          ← <%- page.prev.title %>
+      </a>
+      <% } %>
+    </div>
+    <div class="next-post">
+      <% if (page.next) { %>
+      <a href="<%- url_for(page.next.path) %>">
+          <%- page.next.title %> →
+      </a>
+      <% } %>
+    </div>
+  </div>
+  <div class="duoshuo"><%- partial('template/post/duoshuo') %></div>
+</section>

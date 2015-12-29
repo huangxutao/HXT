@@ -1,0 +1,28 @@
+# config
+logo: /images/logo.png
+saying: 当你的<span>能力</span>不足以支撑你的梦想时，请静下心来慢慢<span>积淀</span>
+# Content
+excerpt_link: more
+
+#Works
+works:
+- works_name: hello world
+  works_url: /
+- works_name: 你好世界
+  works_url: /
+#duoshuo name
+duoshuo: your_duoshuo_name
+
+# Miscellaneous
+github: https://github.com/your_github
+twitter: https://twitter.com/your_twitter
+facebook: https://www.facebook.com/your_facebook
+wechat: https://google.com/
+weibo: http://weibo.com/your_weibo
+
+#Links
+links:
+- name: elliot
+  link: http://huangxutao.github.io/
+- name: some_one
+  link: /
