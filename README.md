@@ -5,7 +5,7 @@ code from 12-23-2015 to 12-29-2015
 ### Install
 If you like it 
 ```
-git clone https://github.com/huangxutao/HXT
+git clone https://github.com/huangxutao/HXT.git
 ```
 
 ### Update
